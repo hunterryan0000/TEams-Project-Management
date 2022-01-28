@@ -9,7 +9,7 @@ public class Project {
     private String description;
     private String startDate;
     private String dueDate;
-    private List<Employee> teamMembers = new ArrayList();
+    private List<Employee> teamMembers = new ArrayList<>();
 
     public String getName() {
         return name;
