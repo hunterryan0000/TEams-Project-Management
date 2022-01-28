@@ -1,11 +1,13 @@
 package com.techelevator;
 
+import javax.print.attribute.standard.MediaSize;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Application {
 
     List<Department> departments = new ArrayList<>();
+    List<Employee> employees = new ArrayList<>();
 
     /**
      * The main entry point in the application
@@ -27,7 +29,7 @@ public class Application {
         createEmployees();
 
         // give Angie a 10% raise, she is doing a great job!
-
+        employees.get(1).raiseSalary(10);
         // print all employees
         printEmployees();
 
@@ -67,7 +69,22 @@ public class Application {
      * Create employees and add them to the collection of employees
      */
     private void createEmployees() {
+        Employee deanJohnson = new Employee();
+        deanJohnson.setEmployeeId(1);
+        deanJohnson.setDeparment(departments.get(2));
+        deanJohnson.setFirstName("Dean");
+        deanJohnson.setLastName("Johnson");
+        deanJohnson.setEmail("djohnson@teams.com");
+        deanJohnson.setSalary(60000);
+        deanJohnson.setHireDate("08/21/2020");
+        Employee angieSmith = new Employee(2, "Angie", "Smith",
+                "asmith@teams.com", 60000, departments.get(2), "08/21/2020");
 
+        Employee margaretThompson = new Employee(3,"Margaret", "Thompson", "mthompson@teams.com",
+                60000, departments.get(0), "08/21/2020");
+        employees.add(deanJohnson);
+        employees.add(angieSmith);
+        employees.add(margaretThompson);
     }
 
     /**
@@ -75,6 +92,10 @@ public class Application {
      */
     private void printEmployees() {
         System.out.println("\n------------- EMPLOYEES ------------------------------");
+        for (Employee employee : employees) {
+            System.out.println(employee.getFullName() + " (" +
+                    employee.getSalary() + ") " + employee.getDeparment().getName());
+        }
 
     }
 

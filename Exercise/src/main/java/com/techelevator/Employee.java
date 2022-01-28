@@ -68,11 +68,12 @@ public class Employee {
         this.hireDate = hireDate;
     }
 
-    Employee(int employeeId, String firstName, String lastName, String email, Department deparment, String hireDate){
+    Employee(int employeeId, String firstName, String lastName, String email, int salary, Department deparment, String hireDate){
         this.employeeId = employeeId;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
+        this.salary = salary;
         this.deparment = deparment;
         this.hireDate = hireDate;
     }
