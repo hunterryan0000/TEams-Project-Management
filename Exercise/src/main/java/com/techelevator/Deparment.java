@@ -2,8 +2,6 @@ package com.techelevator;
 
 public class Deparment {
 
-    
-
         private int departmentId;
         private String name;
 
@@ -23,9 +21,9 @@ public class Deparment {
             this.name = name;
         }
 
-
         public Deparment (int departmentId, String name){
             this.departmentId=departmentId;
             this.name=name;
+            System.out.println("It works");
         }
 }
