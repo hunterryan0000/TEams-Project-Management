@@ -2,12 +2,15 @@ package com.techelevator;
 
 import javax.print.attribute.standard.MediaSize;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Application {
 
     List<Department> departments = new ArrayList<>();
     List<Employee> employees = new ArrayList<>();
+    Map<String,Project> projects = new HashMap<String, Project>();
 
     /**
      * The main entry point in the application
@@ -100,9 +103,20 @@ public class Application {
     }
 
     /**
-     * Create the 'TEams' project.
+     * Create the 'Teams' project.
      */
     private void createTeamsProject() {
+
+        Project teams = new Project("TEams","Project Management Software","10/10/2020","11/10/2020");
+
+        List<Employee> employeeToAdd = new ArrayList<>();
+        for(Employee e : employees){
+            if(e.deparment == departments.get(2)){
+                employeeToAdd.add(e);
+            }
+        }
+        teams.setTeamMembers(employeeToAdd);
+        projects.put("TEams",teams);
 
     }
 
@@ -110,6 +124,16 @@ public class Application {
      * Create the 'Marketing Landing Page' project.
      */
     private void createLandingPageProject() {
+        Project marketingLandingPage = new Project("Marketing Landing Page",
+                "Lead Capture Landing Page for Marketing","10/10/2020","10/17/2020");
+        List<Employee> employeesToAdd = new ArrayList<>();
+        for (Employee e : employees){
+            if(e.getDeparment() == departments.get(0)){
+                employeesToAdd.add(e);
+            }
+        }
+        marketingLandingPage.setTeamMembers(employeesToAdd);
+        projects.put("Marketing Landing Page",marketingLandingPage);
 
     }
 
@@ -118,6 +142,9 @@ public class Application {
      */
     private void printProjectsReport() {
         System.out.println("\n------------- PROJECTS ------------------------------");
+        for (Map.Entry<String,Project> entry : projects.entrySet()){
+            System.out.println(entry.getKey() + ": " + entry.getValue().getTeamMembers().size());
+        }
 
     }
 
