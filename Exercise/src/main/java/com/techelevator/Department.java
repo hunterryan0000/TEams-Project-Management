@@ -1,6 +1,6 @@
 package com.techelevator;
 
-public class Deparment {
+public class Department {
 
         private int departmentId;
         private String name;
@@ -21,7 +21,7 @@ public class Deparment {
             this.name = name;
         }
 
-        public Deparment (int departmentId, String name){
+        public Department(int departmentId, String name){
             this.departmentId=departmentId;
             this.name=name;
             System.out.println("It works");

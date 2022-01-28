@@ -7,7 +7,7 @@ public class Employee {
     String lastName;
     String email;
     double salary;
-    Deparment deparment;
+    Department deparment;
     String hireDate;
 
     public static double startingSalary = 60_000;
@@ -52,11 +52,11 @@ public class Employee {
         this.salary = salary;
     }
 
-    public Deparment getDeparment() {
+    public Department getDeparment() {
         return deparment;
     }
 
-    public void setDeparment(Deparment deparment) {
+    public void setDeparment(Department deparment) {
         this.deparment = deparment;
     }
 
@@ -68,7 +68,7 @@ public class Employee {
         this.hireDate = hireDate;
     }
 
-    Employee(int employeeId, String firstName, String lastName, String email, Deparment deparment, String hireDate){
+    Employee(int employeeId, String firstName, String lastName, String email, Department deparment, String hireDate){
         this.employeeId = employeeId;
         this.firstName = firstName;
         this.lastName = lastName;
